@@ -1,6 +1,6 @@
 === ClickRank - Ai SEO Automation ===
 Contributors: clickrank
-Tags: seo, ai, automation, SEO automation,wordpress SEP, title, meta description, taxonomy, categories, tags 
+Tags: seo, ai, automation, SEO automation,wordpress SEP, title, meta description, taxonomy, categories, tags
 Requires at least: 5.8
 Tested up to: 6.8
 Stable tag: 3.3.5
@@ -12,7 +12,7 @@ Supercharge your WordPress SEO with ClickRank.ai. Automate title & meta descript
 
 == Description ==
 
-The **ClickRank.ai** plugin seamlessly integrates your WordPress site with the powerful ClickRank.ai SEO automation platform. Stop wasting time on manual SEO tasks and let our AI handle the heavy lifting, so you can focus on creating great content. Our platform analyzes your content and automatically generates and applies SEO best practices, helping you improve your search engine rankings and drive more organic traffic.
+The **ClickRank.ai** plugin brings a full suite of SEO automation tools straight into WordPress. Optimise titles, descriptions, schema, and image metadata automatically without connecting to any external account or service. Activate the plugin and your site is ready to start enhancing search performance immediately.
 
 **Key Features:**
 
@@ -23,65 +23,48 @@ The **ClickRank.ai** plugin seamlessly integrates your WordPress site with the p
 * **Canonical URL Management:** Prevent duplicate content issues by automatically setting the optimal canonical URL for all your content types.
 * **Automatic Link Titles:** Improve accessibility and SEO by automatically adding descriptive title attributes to links in your content.
 * **Enhanced SEO Plugin Compatibility:** Full integration with Yoast SEO, RankMath, All In One SEO, and graceful fallbacks for other plugins.
-* **Full Control & Revert:** You have full control over which automation modules are active. All changes can be reverted with a single click from the ClickRank.ai platform.
-* **Secure & Transparent:** Communication is secured via your unique API key. All activities are logged within your WordPress admin for full transparency.
-
-This plugin acts as a connector. A **ClickRank.ai account is required** to use the automation features. Get started for free at [clickrank.ai](https://clickrank.ai/)!
+* **Full Control & Revert:** Toggle individual automation modules and revert every optimisation with a single click inside the WordPress dashboard.
+* **Secure & Transparent:** All automation happens locally. Detailed logs keep you informed of every optimisation performed.
 
 == External Service Disclosure ==
 
-This plugin connects to the ClickRank.ai platform, an external third-party service, to provide its core SEO automation features. To function, this plugin must send data to and receive data from the ClickRank.ai API.
-
-* **Service Provider:** ClickRank.ai
-* **Service Website:** [https://clickrank.ai/](https://clickrank.ai/)
-* **Terms of Service:** [https://clickrank.ai/terms-of-service/](https://clickrank.ai/terms-of-service/)
-* **Privacy Policy:** [https://clickrank.ai/privacy-policy/](https://clickrank.ai/privacy-policy/)
-
-**Data Sent to the Service:**
-
-The following data is sent to the ClickRank.ai API endpoints (`https://app.clickrank.ai/api/v2/`):
-* **API Key Activation:** When you save your API key, the plugin sends your unique API key and a WordPress-generated webhook URL to the service. This is a one-time action to securely link your website and allow our platform to send SEO updates back to you.
-* **Manual Data Sync:** When the "Sync Data" button is pressed, your website's home URL and API key are sent to request the latest set of optimizations from the ClickRank.ai platform.
-* **Content for Analysis:** For the service to generate SEO optimizations, your post and page content (including text, titles, and URLs) is accessed and processed by the ClickRank.ai platform.
-
-This data transmission is essential for the plugin's features to work. All communication is performed over a secure (HTTPS) connection.
+ClickRank.ai now operates entirely in local mode. No external accounts, APIs, or remote web services are required for any feature. All processing stays on your WordPress site.
 
 == Installation ==
 
-1.  Upload the `clickrank-ai` folder to the `/wp-content/plugins/` directory, or install the ZIP file directly through the WordPress plugins screen.
-2.  Activate the plugin. You will be redirected to the Activation page.
-3.  Go to the **ClickRank.ai -> Activation** tab and enter your API Key from your ClickRank.ai dashboard.
-4.  Click "Save & Activate Key".
-5.  Navigate to the **Settings** tab to configure which automation modules you'd like to enable.
-6.  That's it! The plugin will now sync with the ClickRank.ai platform.
+1. Upload the `clickrank-ai` folder to the `/wp-content/plugins/` directory, or install the ZIP file directly through the WordPress plugins screen.
+2. Activate the plugin.
+3. Open **ClickRank.ai** from the WordPress admin menu to review available automation modules.
+4. Adjust module toggles in the **Settings** tab to match your SEO strategy.
+5. Use the **Run Local Sync** button on the dashboard whenever you want to refresh stored optimisations.
 
 == Frequently Asked Questions ==
 
 = Do I need a ClickRank.ai account to use this plugin? =
 
-Yes. This plugin connects your WordPress site to your ClickRank.ai account. The AI processing and optimization management happens on our platform. You can sign up at [clickrank.ai](https://clickrank.ai/).
+No. All features run locally inside your WordPress site—there is no signup, API key, or remote connection required.
 
 = Will this work with my existing SEO plugin? =
 
-Yes. Our plugin is designed to work alongside other popular SEO plugins. When an optimization is sent from ClickRank.ai, our plugin will intelligently override the specific setting (e.g., the meta description) from your existing SEO plugin to ensure the AI-generated content is displayed. Other settings from your SEO plugin remain unaffected.
+Yes. Our plugin is designed to work alongside other popular SEO plugins. When an optimisation runs, the plugin intelligently overrides only the specific fields it manages (such as meta descriptions) so your existing settings remain intact.
 
 = Is my data safe? =
 
-Absolutely. The plugin communicates with our API over a secure (HTTPS) connection, and all requests are authenticated with your unique API key. We only access the data necessary to perform the SEO optimizations you've enabled.
+Absolutely. Because the plugin operates in local mode, no optimisation data leaves your site. All processing happens on your server and every action is logged for review.
 
-= Can I undo a change made by the AI? =
+= Can I undo a change made by the automation? =
 
-Yes. All changes can be reverted directly from your ClickRank.ai dashboard. This gives you full control and peace of mind.
+Yes. Use the **Revert All Changes** button in the Settings tab to roll back every optimisation to the original content.
 
 = What happens if I uninstall the plugin? =
 
-The `uninstall.php` script will clean up all plugin data, including your saved API key, all module settings, and the custom database table used for logging. Your site will revert to its previous state.
+The `uninstall.php` script will clean up all plugin data, including module settings and the custom database table used for logging. Your site will revert to its previous state.
 
 == Screenshots ==
 
-1.  The clean and informative Dashboard tab, providing an at-a-glance overview.
-2.  The powerful Settings tab, where you can configure your API key and toggle individual automation modules.
-3.  The detailed Logs tab, showing a transparent history of all webhook activity from the ClickRank.ai platform.
+1. The clean and informative Dashboard tab, providing an at-a-glance overview with local sync controls.
+2. The powerful Settings tab, where you can manage automation mode and toggle individual modules.
+3. The detailed Logs tab, showing a transparent history of all local automation activity.
 
 == Changelog ==
 
@@ -157,12 +140,3 @@ The `uninstall.php` script will clean up all plugin data, including your saved A
 
 = 3.3.5 =
 Critical update! Fixes duplicate meta tags, schema, and canonical URLs that could hurt your SEO. This update ensures only one of each meta tag appears on your pages, improving search engine rankings and social media sharing. Highly recommended for all users!
-
-= 3.2.0 =
-Major update with complete WordPress taxonomy support! Now optimize categories, tags, custom taxonomies, and archive pages. Includes critical post URL resolution fixes and enhanced SEO plugin compatibility. Highly recommended for all users.
-
-= 3.1.2 =
-This is a critical update that resolves bugs related to schema and image optimization compatibility. It is highly recommended to upgrade to ensure all features work as expected.
-
-= 3.1.1 =
-This version includes important security and compliance updates required by the WordPress plugin review team.

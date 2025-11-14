@@ -22,32 +22,20 @@ class ClickRank_AI_Webhook_Handler {
 		] );
 	}
 
-	public function permissions_check( WP_REST_Request $request ) {
-		// Rate limiting
-		if ( ! $this->check_rate_limit() ) {
-			return new WP_Error( 'rate_limit_exceeded', 'Rate limit exceeded', [ 'status' => 429 ] );
-		}
+        public function permissions_check( WP_REST_Request $request ) {
+                // Rate limiting
+                if ( ! $this->check_rate_limit() ) {
+                        return new WP_Error( 'rate_limit_exceeded', 'Rate limit exceeded', [ 'status' => 429 ] );
+                }
 
-		// API key validation
-		$api_key = get_option( 'clickrank_ai_api_key' );
-		if ( empty( $api_key ) ) {
-			ClickRank_AI_Logger::warning( 'Webhook blocked: No API key configured' );
-			return new WP_Error( 'no_api_key', 'API key not configured', [ 'status' => 401 ] );
-		}
+                // Require an authenticated administrator in local mode
+                if ( ! is_user_logged_in() || ! current_user_can( 'manage_options' ) ) {
+                        ClickRank_AI_Logger::warning( 'Webhook blocked: administrator authentication required in local mode.' );
+                        return new WP_Error( 'forbidden', 'Authentication required', [ 'status' => 401 ] );
+                }
 
-		$auth_header = $request->get_header( 'authorization' );
-		if ( ! preg_match( '/^Bearer\s+(.+)$/i', $auth_header, $matches ) ) {
-			ClickRank_AI_Logger::warning( 'Webhook blocked: Invalid authorization' );
-			return new WP_Error( 'invalid_auth', 'Invalid authorization', [ 'status' => 401 ] );
-		}
-
-		if ( ! hash_equals( $api_key, sanitize_text_field( $matches[1] ) ) ) {
-			ClickRank_AI_Logger::warning( 'Webhook blocked: Invalid API key from IP: ' . $this->get_client_ip() );
-			return new WP_Error( 'invalid_key', 'Invalid API key', [ 'status' => 403 ] );
-		}
-
-		return true;
-	}
+                return true;
+        }
 
 	public function handle_request( WP_REST_Request $request ) {
 		$params = $request->get_json_params();

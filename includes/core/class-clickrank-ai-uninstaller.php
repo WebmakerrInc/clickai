@@ -31,13 +31,13 @@ class ClickRank_AI_Uninstaller {
 	 */
 	private static function delete_options() {
 		$options_to_delete = [
-			'clickrank_ai_api_key',
-			'clickrank_ai_enable_title_opt',
-			'clickrank_ai_enable_meta_opt',
-			'clickrank_ai_enable_img_alt_opt',
-			'clickrank_ai_enable_schema_opt',
-			'clickrank_ai_enable_canonical_opt',
-			'clickrank_ai_enable_link_title_opt',
+                        'clickrank_ai_enable_title_opt',
+                        'clickrank_ai_enable_meta_opt',
+                        'clickrank_ai_enable_img_alt_opt',
+                        'clickrank_ai_enable_schema_opt',
+                        'clickrank_ai_enable_canonical_opt',
+                        'clickrank_ai_enable_link_title_opt',
+                        'clickrank_ai_local_mode',
 		];
 
 		foreach ( $options_to_delete as $option_name ) {
