@@ -33,8 +33,8 @@ $logs = $wpdb->get_results(
 <div class="bg-white shadow-sm rounded-lg">
 	<div class="p-6 border-b border-gray-200 flex flex-col sm:flex-row justify-between sm:items-center gap-4">
 		<div>
-			<h2 class="text-xl font-bold text-gray-800"><?php esc_html_e( 'Webhook Logs', 'clickrank-ai' ); ?></h2>
-			<p class="text-gray-600 mt-2"><?php esc_html_e( 'A record of the most recent events received from ClickRank.ai.', 'clickrank-ai' ); ?></p>
+                        <h2 class="text-xl font-bold text-gray-800"><?php esc_html_e( 'Automation Logs', 'clickrank-ai' ); ?></h2>
+                        <p class="text-gray-600 mt-2"><?php esc_html_e( 'A record of recent optimisation and sync events handled locally.', 'clickrank-ai' ); ?></p>
 		</div>
 		<form method="post" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>">
 			<input type="hidden" name="action" value="clickrank_ai_clear_logs">
